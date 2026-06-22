@@ -3,160 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tori Projects — Open tools and betas</title>
+  <title>Tori Projects &mdash; Open tools and betas</title>
   <meta name="description" content="Open tools and betas built by Tori. VS Code extensions, browser extensions, Obsidian plugins, and Discord bots.">
   <link rel="canonical" href="https://projects.cepcar.top/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tori Projects — Open tools and betas">
+  <meta property="og:title" content="Tori Projects &mdash; Open tools and betas">
   <meta property="og:description" content="Open tools and betas built by Tori. VS Code extensions, browser extensions, Obsidian plugins, and Discord bots.">
   <meta property="og:url" content="https://projects.cepcar.top/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tori Projects — Open tools and betas">
+  <meta name="twitter:title" content="Tori Projects &mdash; Open tools and betas">
   <meta name="twitter:description" content="Open tools and betas built by Tori. VS Code extensions, browser extensions, Obsidian plugins, and Discord bots.">
   <link rel="alternate" type="application/atom+xml" title="Tori Projects Feed" href="https://projects.cepcar.top/feed.xml">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --header-bg: #0f172a;
-      --accent: #0ea5e9;
-      --accent-hover: #0284c7;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --tag-bg: #f1f5f9;
-      --tag-text: #475569;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
-
-    .site-header {
-      background: var(--header-bg);
-      color: #f1f5f9;
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-    .site-header h1 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-    .site-header p {
-      margin-top: 0.5rem;
-      font-size: 1.05rem;
-      color: #94a3b8;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-      flex: 1;
-      width: 100%;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: box-shadow 0.15s;
-    }
-    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-
-    .card-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.2em 0.6em;
-      border-radius: 999px;
-    }
-    .badge-beta { background: #fef3c7; color: #92400e; }
-    .badge-live { background: #dcfce7; color: #166534; }
-
-    .category {
-      font-size: 0.73rem;
-      color: var(--muted);
-      background: var(--tag-bg);
-      padding: 0.2em 0.6em;
-      border-radius: 999px;
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    .card-title a { color: var(--text); }
-    .card-title a:hover { color: var(--accent); text-decoration: none; }
-
-    .card-tagline {
-      font-size: 0.88rem;
-      color: var(--muted);
-      flex: 1;
-    }
-
-    .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .tag {
-      font-size: 0.68rem;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-      padding: 0.15em 0.5em;
-      border-radius: 0.25rem;
-    }
-
-    .card-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.45em 0.9em;
-      border-radius: 0.4rem;
-      text-decoration: none;
-      transition: background 0.1s, color 0.1s;
-      white-space: nowrap;
-    }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
-    .btn-secondary { background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
-    .btn-secondary:hover { background: #e2e8f0; color: var(--text); text-decoration: none; }
-
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent); }
-    .footer-row + .footer-row { margin-top: 0.4rem; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#f8fafc;--card-bg:#ffffff;--header-bg:#0f172a;--accent:#0ea5e9;--accent-hover:#0284c7;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--tag-bg:#f1f5f9;--tag-text:#475569}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+    a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+    .site-header{background:var(--header-bg);color:#f1f5f9;padding:3rem 1.5rem;text-align:center}
+    .site-header h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;letter-spacing:-.02em;color:#fff}
+    .site-header p{margin-top:.5rem;font-size:1.05rem;color:#94a3b8}
+    main{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 4rem;flex:1;width:100%}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:box-shadow .15s}
+    .card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .card-meta{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2em .6em;border-radius:999px}
+    .badge-beta{background:#fef3c7;color:#92400e}.badge-live{background:#dcfce7;color:#166534}
+    .category{font-size:.73rem;color:var(--muted);background:var(--tag-bg);padding:.2em .6em;border-radius:999px}
+    .card-title{font-size:1.1rem;font-weight:700;line-height:1.3}
+    .card-title a{color:var(--text)}.card-title a:hover{color:var(--accent);text-decoration:none}
+    .card-tagline{font-size:.88rem;color:var(--muted);flex:1}
+    .tags{display:flex;gap:.4rem;flex-wrap:wrap}
+    .tag{font-size:.68rem;color:var(--tag-text);background:var(--tag-bg);padding:.15em .5em;border-radius:.25rem}
+    .card-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
+    .btn{display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;padding:.45em .9em;border-radius:.4rem;text-decoration:none;transition:background .1s,color .1s;white-space:nowrap}
+    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover);color:#fff;text-decoration:none}
+    .btn-secondary{background:var(--tag-bg);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:#e2e8f0;color:var(--text);text-decoration:none}
+    .card-ctas{display:flex;gap:.75rem;flex-wrap:wrap;padding-top:.6rem;border-top:1px solid var(--border);margin-top:.1rem}
+    .cta-link{font-size:.73rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+    .cta-link:hover{color:var(--accent);text-decoration:underline}
+    .cta-commercial{color:#15803d;font-weight:600}.cta-commercial:hover{color:#166534}
+    footer{border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;font-size:.83rem;color:var(--muted)}
+    footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
+    .footer-row+.footer-row{margin-top:.4rem}
   </style>
 </head>
 <body>
@@ -164,7 +53,6 @@
     <h1>Tori Projects</h1>
     <p>Open tools and betas</p>
   </header>
-
   <main>
     <div class="project-grid">
 
@@ -173,20 +61,19 @@
           <span class="badge badge-beta">Beta</span>
           <span class="category">VS Code Extension</span>
         </div>
-        <h2 class="card-title">
-          <a href="/vscode-exact-file-preview/">VS Code Exact File Preview</a>
-        </h2>
+        <h2 class="card-title"><a href="/vscode-exact-file-preview/">VS Code Exact File Preview</a></h2>
         <p class="card-tagline">Preview the exact selected file in VS Code without starting a server or guessing your framework.</p>
         <div class="tags">
-          <span class="tag">vscode</span>
-          <span class="tag">preview</span>
-          <span class="tag">developer-tools</span>
+          <span class="tag">vscode</span><span class="tag">preview</span><span class="tag">developer-tools</span>
         </div>
         <div class="card-actions">
-          <a href="https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix"
-             class="btn btn-primary">&#8595; Download .vsix</a>
-          <a href="https://github.com/toris-tree/vscode-exact-file-preview"
-             class="btn btn-secondary">GitHub &#8594;</a>
+          <a href="https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix" class="btn btn-primary">&#8595; Download .vsix</a>
+          <a href="/vscode-exact-file-preview/" class="btn btn-secondary">Details &#8594;</a>
+        </div>
+        <div class="card-ctas">
+          <a href="https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=bug&title=Bug%20report%3A%20VS%20Code%20Exact%20File%20Preview" class="cta-link" target="_blank" rel="noopener">&#128027; Bug</a>
+          <a href="https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20VS%20Code%20Exact%20File%20Preview" class="cta-link cta-commercial" target="_blank" rel="noopener">&#128188; Commercial</a>
+          <a href="https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=enhancement&title=Feature%20request%3A%20VS%20Code%20Exact%20File%20Preview" class="cta-link" target="_blank" rel="noopener">&#10024; Feature request</a>
         </div>
       </article>
 
@@ -195,20 +82,19 @@
           <span class="badge badge-beta">Beta</span>
           <span class="category">Chrome Extension</span>
         </div>
-        <h2 class="card-title">
-          <a href="https://github.com/toris-tree/github-timeline-focus">GitHub Timeline Focus</a>
-        </h2>
+        <h2 class="card-title"><a href="/github-timeline-focus/">GitHub Timeline Focus</a></h2>
         <p class="card-tagline">Hides label, assignment, and project noise from GitHub issue and PR timelines so only meaningful events show.</p>
         <div class="tags">
-          <span class="tag">chrome</span>
-          <span class="tag">github</span>
-          <span class="tag">productivity</span>
+          <span class="tag">chrome</span><span class="tag">github</span><span class="tag">productivity</span>
         </div>
         <div class="card-actions">
-          <a href="https://github.com/toris-tree/github-timeline-focus/releases/download/v0.1.0-beta/github-timeline-focus-0.1.0-beta.zip"
-             class="btn btn-primary">&#8595; Download .zip</a>
-          <a href="https://github.com/toris-tree/github-timeline-focus"
-             class="btn btn-secondary">GitHub &#8594;</a>
+          <a href="https://github.com/toris-tree/github-timeline-focus/releases/download/v0.1.0-beta/github-timeline-focus-0.1.0-beta.zip" class="btn btn-primary">&#8595; Download .zip</a>
+          <a href="/github-timeline-focus/" class="btn btn-secondary">Details &#8594;</a>
+        </div>
+        <div class="card-ctas">
+          <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=bug&title=Bug%20report%3A%20GitHub%20Timeline%20Focus" class="cta-link" target="_blank" rel="noopener">&#128027; Bug</a>
+          <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20GitHub%20Timeline%20Focus" class="cta-link cta-commercial" target="_blank" rel="noopener">&#128188; Commercial</a>
+          <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=enhancement&title=Feature%20request%3A%20GitHub%20Timeline%20Focus" class="cta-link" target="_blank" rel="noopener">&#10024; Feature request</a>
         </div>
       </article>
 
@@ -217,20 +103,19 @@
           <span class="badge badge-beta">Beta</span>
           <span class="category">Obsidian Plugin</span>
         </div>
-        <h2 class="card-title">
-          <a href="https://github.com/toris-tree/attachment-rename-safe">Attachment Rename Safe</a>
-        </h2>
+        <h2 class="card-title"><a href="/attachment-rename-safe/">Attachment Rename Safe</a></h2>
         <p class="card-tagline">Rename all attachments referenced in the current note with a live preview before any change is applied.</p>
         <div class="tags">
-          <span class="tag">obsidian</span>
-          <span class="tag">notes</span>
-          <span class="tag">productivity</span>
+          <span class="tag">obsidian</span><span class="tag">notes</span><span class="tag">productivity</span>
         </div>
         <div class="card-actions">
-          <a href="https://github.com/toris-tree/attachment-rename-safe/releases/download/v0.1.0-beta/attachment-rename-safe-0.1.0.zip"
-             class="btn btn-primary">&#8595; Download .zip</a>
-          <a href="https://github.com/toris-tree/attachment-rename-safe"
-             class="btn btn-secondary">GitHub &#8594;</a>
+          <a href="https://github.com/toris-tree/attachment-rename-safe/releases/download/v0.1.0-beta/attachment-rename-safe-0.1.0.zip" class="btn btn-primary">&#8595; Download .zip</a>
+          <a href="/attachment-rename-safe/" class="btn btn-secondary">Details &#8594;</a>
+        </div>
+        <div class="card-ctas">
+          <a href="https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=bug&title=Bug%20report%3A%20Attachment%20Rename%20Safe" class="cta-link" target="_blank" rel="noopener">&#128027; Bug</a>
+          <a href="https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20Attachment%20Rename%20Safe" class="cta-link cta-commercial" target="_blank" rel="noopener">&#128188; Commercial</a>
+          <a href="https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=enhancement&title=Feature%20request%3A%20Attachment%20Rename%20Safe" class="cta-link" target="_blank" rel="noopener">&#10024; Feature request</a>
         </div>
       </article>
 
@@ -239,31 +124,29 @@
           <span class="badge badge-live">Live</span>
           <span class="category">Discord Bot</span>
         </div>
-        <h2 class="card-title">
-          <a href="/lostark-raid-bot/">Lost Ark Raid Bot</a>
-        </h2>
+        <h2 class="card-title"><a href="/lostark-raid-bot/">Lost Ark Raid Bot</a></h2>
         <p class="card-tagline">Discord bot for Lost Ark raid scheduling, roster management, and team coordination.</p>
         <div class="tags">
-          <span class="tag">discord</span>
-          <span class="tag">gaming</span>
-          <span class="tag">lost-ark</span>
+          <span class="tag">discord</span><span class="tag">gaming</span><span class="tag">lost-ark</span>
         </div>
         <div class="card-actions">
           <a href="https://lostark.cepcar.top" class="btn btn-primary">Visit Site &#8594;</a>
           <a href="/lostark-raid-bot/" class="btn btn-secondary">Details</a>
         </div>
+        <div class="card-ctas">
+          <a href="https://github.com/toris-tree/tori-projects/issues/new?labels=bug%2Clostark-raid-bot&title=Bug%3A%20Lost%20Ark%20Raid%20Bot" class="cta-link" target="_blank" rel="noopener">&#128027; Bug</a>
+          <a href="https://github.com/toris-tree/tori-projects/issues/new?labels=commercial%2Clostark-raid-bot&title=Commercial%20inquiry%3A%20Lost%20Ark%20Raid%20Bot" class="cta-link cta-commercial" target="_blank" rel="noopener">&#128188; Commercial</a>
+          <a href="https://github.com/toris-tree/tori-projects/issues/new?labels=enhancement%2Clostark-raid-bot&title=Feature%20request%3A%20Lost%20Ark%20Raid%20Bot" class="cta-link" target="_blank" rel="noopener">&#10024; Feature request</a>
+        </div>
       </article>
 
     </div>
   </main>
-
   <footer>
     <p class="footer-row">
       <a href="https://projects.cepcar.top/">projects.cepcar.top</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/feed.xml">Atom Feed</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/projects.json">projects.json</a>
+      &nbsp;&middot;&nbsp;<a href="/feed.xml">Atom Feed</a>
+      &nbsp;&middot;&nbsp;<a href="/projects.json">projects.json</a>
     </p>
     <p class="footer-row">All projects provided as-is with no warranty. &copy; 2026 Tori Projects</p>
   </footer>

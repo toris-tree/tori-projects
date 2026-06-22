@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Timeline Focus</title>
+  <meta name="description" content="Chrome extension that hides GitHub timeline noise — label changes, assignments, project moves — keeping only meaningful comments and reviews.">
+  <link rel="canonical" href="https://projects.cepcar.top/github-timeline-focus/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GitHub Timeline Focus">
+  <meta property="og:description" content="Chrome extension that hides GitHub timeline noise — label changes, assignments, project moves — keeping only meaningful comments and reviews.">
+  <meta property="og:url" content="https://projects.cepcar.top/github-timeline-focus/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GitHub Timeline Focus">
+  <meta name="twitter:description" content="Chrome extension that hides GitHub timeline noise — label changes, assignments, project moves — keeping only meaningful comments and reviews.">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#f8fafc;--card-bg:#ffffff;--header-bg:#0f172a;--accent:#0ea5e9;--accent-hover:#0284c7;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--tag-bg:#f1f5f9;--green:#166534}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+    a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+    .site-nav{background:var(--header-bg);padding:.85rem 1.5rem}
+    .site-nav a{color:#94a3b8;font-size:.85rem}.site-nav a:hover{color:#fff;text-decoration:none}
+    .project-hero{background:var(--header-bg);color:#f1f5f9;padding:2.5rem 1.5rem 2rem}
+    .hero-inner{max-width:780px;margin:0 auto}
+    .hero-badge{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.2em .7em;border-radius:999px;background:#fef3c7;color:#92400e;margin-bottom:.75rem}
+    .hero-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:#fff}
+    .hero-tagline{margin-top:.6rem;font-size:1.05rem;color:#94a3b8;max-width:600px}
+    .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+    .btn{display:inline-flex;align-items:center;gap:.3rem;font-size:.85rem;font-weight:600;padding:.55em 1.1em;border-radius:.45rem;text-decoration:none;transition:background .1s,color .1s;white-space:nowrap}
+    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover);color:#fff;text-decoration:none}
+    .btn-outline{background:transparent;color:#cbd5e1;border:1px solid #334155}.btn-outline:hover{background:#1e293b;color:#fff;text-decoration:none}
+    main{max-width:780px;margin:0 auto;padding:2.5rem 1.5rem 4rem;flex:1;width:100%}
+    .section{margin-bottom:2rem}.section h2{font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+    .feature-list{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+    .feature-list li::before{content:"\2713\00a0";color:var(--green);font-weight:700}
+    .install-steps{list-style:decimal;padding-left:1.4rem;display:flex;flex-direction:column;gap:.4rem;font-size:.9rem}
+    footer{border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;font-size:.83rem;color:var(--muted)}
+    footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
+    .footer-row+.footer-row{margin-top:.4rem}
+    .get-involved { border-top: 2px solid var(--border); margin-top: 2.5rem; padding-top: 2rem; }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cta-card {
+      display: flex; flex-direction: column; gap: 0.3rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.6rem;
+      text-decoration: none;
+      background: var(--card-bg);
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .cta-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.07); border-color: var(--accent); text-decoration: none; }
+    .cta-card--commercial { border-color: #bbf7d0; background: #f0fdf4; }
+    .cta-card--commercial:hover { border-color: #4ade80; }
+    .cta-icon { font-size: 1.4rem; line-height: 1; }
+    .cta-title { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+    .cta-desc { font-size: 0.75rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="site-nav"><a href="/">&#8592; All projects</a></nav>
+  <header class="project-hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Beta &middot; Chrome Extension</div>
+      <h1 class="hero-title">GitHub Timeline Focus</h1>
+      <p class="hero-tagline">Hides label, assignment, and project noise from GitHub issue and PR timelines so only meaningful events show.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/toris-tree/github-timeline-focus/releases/download/v0.1.0-beta/github-timeline-focus-0.1.0-beta.zip" class="btn btn-primary">&#8595; Download .zip</a>
+        <a href="https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta" class="btn btn-outline">Release notes &#8594;</a>
+        <a href="https://github.com/toris-tree/github-timeline-focus" class="btn btn-outline">GitHub &#8594;</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <h2>What it does</h2>
+      <ul class="feature-list">
+        <li>Hides label-changed, assigned, mentioned, referenced, and project-moved events from issue and PR timelines</li>
+        <li>Keeps all human comments, review threads, and commit references visible</li>
+        <li>One-click toggle to restore hidden events without reloading the page</li>
+        <li>Zero permissions beyond the GitHub URLs it runs on &mdash; no broad host permissions</li>
+        <li>No background service worker, no network calls, no telemetry, no accounts</li>
+        <li>Works on any public or private GitHub repo you have access to</li>
+      </ul>
+    </section>
+    <section class="section">
+      <h2>Install</h2>
+      <ol class="install-steps">
+        <li>Download and unzip the <code>.zip</code> file above</li>
+        <li>In Chrome, open <code>chrome://extensions</code></li>
+        <li>Enable <strong>Developer mode</strong> (top-right toggle)</li>
+        <li>Click <strong>Load unpacked</strong> and select the unzipped folder</li>
+        <li>Navigate to any GitHub issue or PR &mdash; timeline noise is hidden automatically</li>
+      </ol>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Not yet on the Chrome Web Store &mdash; manual install required for now.</p>
+    </section>
+    <div style="margin-top:1rem">
+      <a href="https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta" class="btn btn-outline">Release notes on GitHub &#8594;</a>
+    </div>
+
+    <section class="section get-involved">
+      <h2>Get involved</h2>
+      <div class="cta-grid">
+        <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=bug&title=Bug%20report%3A%20GitHub%20Timeline%20Focus&body=%2A%2ADescribe%20the%20bug%3A%2A%2A%0A%0A%2A%2ASteps%20to%20reproduce%3A%2A%2A%0A%0A%2A%2AVersion%20and%20OS%3A%2A%2A%0A" class="cta-card" target="_blank" rel="noopener">
+          <span class="cta-icon">&#128027;</span>
+          <span class="cta-title">Found a bug?</span>
+          <span class="cta-desc">Open an issue on GitHub</span>
+        </a>
+        <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20GitHub%20Timeline%20Focus&body=I%27m%20interested%20in%20commercial%20use%20of%20GitHub%20Timeline%20Focus.%0A%0A%2A%2AUse%20case%3A%2A%2A%0A%0A%2A%2AOrganization%3A%2A%2A%0A" class="cta-card cta-card--commercial" target="_blank" rel="noopener">
+          <span class="cta-icon">&#128188;</span>
+          <span class="cta-title">Commercial use or custom work?</span>
+          <span class="cta-desc">Open a free inquiry &#8212; MIT license, but reach out</span>
+        </a>
+        <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=enhancement&title=Feature%20request%3A%20GitHub%20Timeline%20Focus&body=%2A%2AFeature%20description%3A%2A%2A%0A%0A%2A%2AProblem%20it%20solves%3A%2A%2A%0A" class="cta-card" target="_blank" rel="noopener">
+          <span class="cta-icon">&#10024;</span>
+          <span class="cta-title">Have a feature idea?</span>
+          <span class="cta-desc">Request it on GitHub</span>
+        </a>
+        <a href="https://github.com/toris-tree/github-timeline-focus/issues/new?labels=contributor&title=Contributor%20interest%3A%20GitHub%20Timeline%20Focus&body=I%27d%20like%20to%20contribute%20to%20GitHub%20Timeline%20Focus.%0A%0A%2A%2AWhat%20I%20have%20in%20mind%3A%2A%2A%0A" class="cta-card" target="_blank" rel="noopener">
+          <span class="cta-icon">&#128296;</span>
+          <span class="cta-title">Want to contribute?</span>
+          <span class="cta-desc">Open a PR or start a conversation</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="footer-row">
+      <a href="/">&#8592; All projects</a>
+      &nbsp;&middot;&nbsp;<a href="https://github.com/toris-tree/github-timeline-focus">GitHub</a>
+      &nbsp;&middot;&nbsp;<a href="https://projects.cepcar.top/">projects.cepcar.top</a>
+    </p>
+    <p class="footer-row">Provided as-is with no warranty. &copy; 2026 Tori Projects</p>
+  </footer>
+</body>
+</html>

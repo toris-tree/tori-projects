@@ -4,7 +4,8 @@
     "title": "Tori Projects",
     "description": "Open tools and betas built by Tori",
     "feed": "https://projects.cepcar.top/feed.xml",
-    "generated": "2026-06-22"
+    "generated": "2026-06-22",
+    "_cta_schema": "v1"
   },
   "projects": [
     {
@@ -13,7 +14,11 @@
       "tagline": "Preview the exact selected file in VS Code without starting a server or guessing your framework.",
       "status": "beta",
       "category": "vs-code-extension",
-      "tags": ["vscode", "preview", "developer-tools"],
+      "tags": [
+        "vscode",
+        "preview",
+        "developer-tools"
+      ],
       "github": "https://github.com/toris-tree/vscode-exact-file-preview",
       "project_page": "https://projects.cepcar.top/vscode-exact-file-preview/",
       "download": {
@@ -22,7 +27,33 @@
       },
       "release_page": "https://github.com/toris-tree/vscode-exact-file-preview/releases/tag/v0.1.0-beta",
       "version": "0.1.0-beta",
-      "released": "2026-06-22"
+      "released": "2026-06-22",
+      "ctas": [
+        {
+          "type": "bug_report",
+          "label": "Report a bug",
+          "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=bug&title=Bug%20report%3A%20VS%20Code%20Exact%20File%20Preview&body=%2A%2ADescribe%20the%20bug%3A%2A%2A%0A%0A%2A%2ASteps%20to%20reproduce%3A%2A%2A%0A%0A%2A%2AVersion%20and%20OS%3A%2A%2A%0A",
+          "intent": "user_support"
+        },
+        {
+          "type": "commercial_inquiry",
+          "label": "Commercial use or custom integration",
+          "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20VS%20Code%20Exact%20File%20Preview&body=I%27m%20interested%20in%20commercial%20use%20of%20VS%20Code%20Exact%20File%20Preview.%0A%0A%2A%2AUse%20case%3A%2A%2A%0A%0A%2A%2AOrganization%3A%2A%2A%0A",
+          "intent": "buyer"
+        },
+        {
+          "type": "feature_request",
+          "label": "Request a feature",
+          "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=enhancement&title=Feature%20request%3A%20VS%20Code%20Exact%20File%20Preview&body=%2A%2AFeature%20description%3A%2A%2A%0A%0A%2A%2AProblem%20it%20solves%3A%2A%2A%0A",
+          "intent": "contributor"
+        },
+        {
+          "type": "contributor",
+          "label": "Contribute a PR",
+          "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=contributor&title=Contributor%20interest%3A%20VS%20Code%20Exact%20File%20Preview&body=I%27d%20like%20to%20contribute%20to%20VS%20Code%20Exact%20File%20Preview.%0A%0A%2A%2AWhat%20I%20have%20in%20mind%3A%2A%2A%0A",
+          "intent": "contributor"
+        }
+      ]
     },
     {
       "slug": "github-timeline-focus",
@@ -30,15 +61,46 @@
       "tagline": "Hides label, assignment, and project noise from GitHub issue and PR timelines so only meaningful events show.",
       "status": "beta",
       "category": "browser-extension",
-      "tags": ["chrome", "github", "productivity"],
+      "tags": [
+        "chrome",
+        "github",
+        "productivity"
+      ],
       "github": "https://github.com/toris-tree/github-timeline-focus",
+      "project_page": "https://projects.cepcar.top/github-timeline-focus/",
       "download": {
         "label": "Download .zip (0.1.0-beta)",
         "url": "https://github.com/toris-tree/github-timeline-focus/releases/download/v0.1.0-beta/github-timeline-focus-0.1.0-beta.zip"
       },
       "release_page": "https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta",
       "version": "0.1.0-beta",
-      "released": "2026-06-22"
+      "released": "2026-06-22",
+      "ctas": [
+        {
+          "type": "bug_report",
+          "label": "Report a bug",
+          "url": "https://github.com/toris-tree/github-timeline-focus/issues/new?labels=bug&title=Bug%20report%3A%20GitHub%20Timeline%20Focus&body=%2A%2ADescribe%20the%20bug%3A%2A%2A%0A%0A%2A%2ASteps%20to%20reproduce%3A%2A%2A%0A%0A%2A%2AVersion%20and%20OS%3A%2A%2A%0A",
+          "intent": "user_support"
+        },
+        {
+          "type": "commercial_inquiry",
+          "label": "Commercial use or custom integration",
+          "url": "https://github.com/toris-tree/github-timeline-focus/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20GitHub%20Timeline%20Focus&body=I%27m%20interested%20in%20commercial%20use%20of%20GitHub%20Timeline%20Focus.%0A%0A%2A%2AUse%20case%3A%2A%2A%0A%0A%2A%2AOrganization%3A%2A%2A%0A",
+          "intent": "buyer"
+        },
+        {
+          "type": "feature_request",
+          "label": "Request a feature",
+          "url": "https://github.com/toris-tree/github-timeline-focus/issues/new?labels=enhancement&title=Feature%20request%3A%20GitHub%20Timeline%20Focus&body=%2A%2AFeature%20description%3A%2A%2A%0A%0A%2A%2AProblem%20it%20solves%3A%2A%2A%0A",
+          "intent": "contributor"
+        },
+        {
+          "type": "contributor",
+          "label": "Contribute a PR",
+          "url": "https://github.com/toris-tree/github-timeline-focus/issues/new?labels=contributor&title=Contributor%20interest%3A%20GitHub%20Timeline%20Focus&body=I%27d%20like%20to%20contribute%20to%20GitHub%20Timeline%20Focus.%0A%0A%2A%2AWhat%20I%20have%20in%20mind%3A%2A%2A%0A",
+          "intent": "contributor"
+        }
+      ]
     },
     {
       "slug": "attachment-rename-safe",
@@ -46,15 +108,46 @@
       "tagline": "Rename all attachments referenced in the current Obsidian note with a live preview before any change is applied.",
       "status": "beta",
       "category": "obsidian-plugin",
-      "tags": ["obsidian", "notes", "productivity"],
+      "tags": [
+        "obsidian",
+        "notes",
+        "productivity"
+      ],
       "github": "https://github.com/toris-tree/attachment-rename-safe",
+      "project_page": "https://projects.cepcar.top/attachment-rename-safe/",
       "download": {
         "label": "Download .zip (0.1.0-beta)",
         "url": "https://github.com/toris-tree/attachment-rename-safe/releases/download/v0.1.0-beta/attachment-rename-safe-0.1.0.zip"
       },
       "release_page": "https://github.com/toris-tree/attachment-rename-safe/releases/tag/v0.1.0-beta",
       "version": "0.1.0-beta",
-      "released": "2026-06-22"
+      "released": "2026-06-22",
+      "ctas": [
+        {
+          "type": "bug_report",
+          "label": "Report a bug",
+          "url": "https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=bug&title=Bug%20report%3A%20Attachment%20Rename%20Safe&body=%2A%2ADescribe%20the%20bug%3A%2A%2A%0A%0A%2A%2ASteps%20to%20reproduce%3A%2A%2A%0A%0A%2A%2AVersion%20and%20OS%3A%2A%2A%0A",
+          "intent": "user_support"
+        },
+        {
+          "type": "commercial_inquiry",
+          "label": "Commercial use or custom integration",
+          "url": "https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=commercial&title=Commercial%20inquiry%3A%20Attachment%20Rename%20Safe&body=I%27m%20interested%20in%20commercial%20use%20of%20Attachment%20Rename%20Safe.%0A%0A%2A%2AUse%20case%3A%2A%2A%0A%0A%2A%2AOrganization%3A%2A%2A%0A",
+          "intent": "buyer"
+        },
+        {
+          "type": "feature_request",
+          "label": "Request a feature",
+          "url": "https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=enhancement&title=Feature%20request%3A%20Attachment%20Rename%20Safe&body=%2A%2AFeature%20description%3A%2A%2A%0A%0A%2A%2AProblem%20it%20solves%3A%2A%2A%0A",
+          "intent": "contributor"
+        },
+        {
+          "type": "contributor",
+          "label": "Contribute a PR",
+          "url": "https://github.com/toris-tree/attachment-rename-safe/issues/new?labels=contributor&title=Contributor%20interest%3A%20Attachment%20Rename%20Safe&body=I%27d%20like%20to%20contribute%20to%20Attachment%20Rename%20Safe.%0A%0A%2A%2AWhat%20I%20have%20in%20mind%3A%2A%2A%0A",
+          "intent": "contributor"
+        }
+      ]
     },
     {
       "slug": "lostark-raid-bot",
@@ -62,10 +155,34 @@
       "tagline": "Discord bot for Lost Ark raid scheduling, roster management, and team coordination.",
       "status": "live",
       "category": "discord-bot",
-      "tags": ["discord", "gaming", "lost-ark"],
+      "tags": [
+        "discord",
+        "gaming",
+        "lost-ark"
+      ],
       "dedicated_site": "https://lostark.cepcar.top",
       "project_page": "https://projects.cepcar.top/lostark-raid-bot/",
-      "released": "2026-06-16"
+      "released": "2026-06-16",
+      "ctas": [
+        {
+          "type": "inquiry",
+          "label": "Request a similar bot for your community",
+          "url": "https://github.com/toris-tree/tori-projects/issues/new?labels=commercial%2Clostark-raid-bot&title=Bot%20inquiry%3A%20Lost%20Ark%20Raid%20Bot&body=I%20would%20like%20a%20similar%20Discord%20bot%20for%20my%20community.%0A%0A%2A%2ACommunity%20size%3A%2A%2A%0A%0A%2A%2AUse%20case%3A%2A%2A%0A",
+          "intent": "buyer"
+        },
+        {
+          "type": "bug_report",
+          "label": "Report an issue",
+          "url": "https://github.com/toris-tree/tori-projects/issues/new?labels=bug%2Clostark-raid-bot&title=Bug%3A%20Lost%20Ark%20Raid%20Bot",
+          "intent": "user_support"
+        },
+        {
+          "type": "feature_request",
+          "label": "Request a feature",
+          "url": "https://github.com/toris-tree/tori-projects/issues/new?labels=enhancement%2Clostark-raid-bot&title=Feature%20request%3A%20Lost%20Ark%20Raid%20Bot",
+          "intent": "contributor"
+        }
+      ]
     }
   ]
 }
