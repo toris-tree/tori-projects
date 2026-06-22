@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tori Projects</title>
+  <subtitle>Open tools and betas</subtitle>
+  <link href="https://projects.cepcar.top/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://projects.cepcar.top/" rel="alternate" type="text/html"/>
+  <updated>2026-06-22T00:00:00Z</updated>
+  <id>https://projects.cepcar.top/</id>
+  <author><name>Tori Projects</name></author>
+
+  <entry>
+    <title>VS Code Exact File Preview — v0.1.0-beta</title>
+    <link href="https://projects.cepcar.top/vscode-exact-file-preview/"/>
+    <id>https://projects.cepcar.top/vscode-exact-file-preview/</id>
+    <updated>2026-06-22T00:00:00Z</updated>
+    <summary>Preview the exact selected file in VS Code without starting a server or guessing your framework. Supports .html, .svg, .md, .txt, .json, .xml. HTML and SVG are fully sandboxed with no script execution.</summary>
+    <category term="vs-code-extension"/>
+  </entry>
+
+  <entry>
+    <title>GitHub Timeline Focus — v0.1.0-beta</title>
+    <link href="https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta"/>
+    <id>https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta</id>
+    <updated>2026-06-22T00:00:00Z</updated>
+    <summary>Chrome extension that hides label, assignment, and project noise from GitHub issue and PR timelines. Comments, reviews, closed/merged, and title renames are always kept visible. Floating toggle to show everything.</summary>
+    <category term="browser-extension"/>
+  </entry>
+
+  <entry>
+    <title>Attachment Rename Safe — v0.1.0-beta</title>
+    <link href="https://github.com/toris-tree/attachment-rename-safe/releases/tag/v0.1.0-beta"/>
+    <id>https://github.com/toris-tree/attachment-rename-safe/releases/tag/v0.1.0-beta</id>
+    <updated>2026-06-22T00:00:00Z</updated>
+    <summary>Obsidian plugin that renames all attachments referenced in the current note with a live preview before any change is applied. Supports wikilinks and Markdown links. Stores a local undo log.</summary>
+    <category term="obsidian-plugin"/>
+  </entry>
+
+  <entry>
+    <title>Lost Ark Raid Bot — Live</title>
+    <link href="https://lostark.cepcar.top"/>
+    <id>https://projects.cepcar.top/lostark-raid-bot/</id>
+    <updated>2026-06-16T00:00:00Z</updated>
+    <summary>Discord bot for Lost Ark raid scheduling, roster management, and team coordination. Live and in active use.</summary>
+    <category term="discord-bot"/>
+  </entry>
+</feed>

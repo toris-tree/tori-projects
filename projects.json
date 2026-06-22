@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "base_url": "https://projects.cepcar.top",
+    "title": "Tori Projects",
+    "description": "Open tools and betas built by Tori",
+    "feed": "https://projects.cepcar.top/feed.xml",
+    "generated": "2026-06-22"
+  },
+  "projects": [
+    {
+      "slug": "vscode-exact-file-preview",
+      "name": "VS Code Exact File Preview",
+      "tagline": "Preview the exact selected file in VS Code without starting a server or guessing your framework.",
+      "status": "beta",
+      "category": "vs-code-extension",
+      "tags": ["vscode", "preview", "developer-tools"],
+      "github": "https://github.com/toris-tree/vscode-exact-file-preview",
+      "project_page": "https://projects.cepcar.top/vscode-exact-file-preview/",
+      "download": {
+        "label": "Download .vsix (0.1.0-beta)",
+        "url": "https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix"
+      },
+      "release_page": "https://github.com/toris-tree/vscode-exact-file-preview/releases/tag/v0.1.0-beta",
+      "version": "0.1.0-beta",
+      "released": "2026-06-22"
+    },
+    {
+      "slug": "github-timeline-focus",
+      "name": "GitHub Timeline Focus",
+      "tagline": "Hides label, assignment, and project noise from GitHub issue and PR timelines so only meaningful events show.",
+      "status": "beta",
+      "category": "browser-extension",
+      "tags": ["chrome", "github", "productivity"],
+      "github": "https://github.com/toris-tree/github-timeline-focus",
+      "download": {
+        "label": "Download .zip (0.1.0-beta)",
+        "url": "https://github.com/toris-tree/github-timeline-focus/releases/download/v0.1.0-beta/github-timeline-focus-0.1.0-beta.zip"
+      },
+      "release_page": "https://github.com/toris-tree/github-timeline-focus/releases/tag/v0.1.0-beta",
+      "version": "0.1.0-beta",
+      "released": "2026-06-22"
+    },
+    {
+      "slug": "attachment-rename-safe",
+      "name": "Attachment Rename Safe",
+      "tagline": "Rename all attachments referenced in the current Obsidian note with a live preview before any change is applied.",
+      "status": "beta",
+      "category": "obsidian-plugin",
+      "tags": ["obsidian", "notes", "productivity"],
+      "github": "https://github.com/toris-tree/attachment-rename-safe",
+      "download": {
+        "label": "Download .zip (0.1.0-beta)",
+        "url": "https://github.com/toris-tree/attachment-rename-safe/releases/download/v0.1.0-beta/attachment-rename-safe-0.1.0.zip"
+      },
+      "release_page": "https://github.com/toris-tree/attachment-rename-safe/releases/tag/v0.1.0-beta",
+      "version": "0.1.0-beta",
+      "released": "2026-06-22"
+    },
+    {
+      "slug": "lostark-raid-bot",
+      "name": "Lost Ark Raid Bot",
+      "tagline": "Discord bot for Lost Ark raid scheduling, roster management, and team coordination.",
+      "status": "live",
+      "category": "discord-bot",
+      "tags": ["discord", "gaming", "lost-ark"],
+      "dedicated_site": "https://lostark.cepcar.top",
+      "project_page": "https://projects.cepcar.top/lostark-raid-bot/",
+      "released": "2026-06-16"
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VS Code Exact File Preview — Preview any file without a server</title>
+  <meta name="description" content="VS Code extension that previews .html, .svg, .md, .json, .xml, and .txt files exactly as they are, sandboxed, without starting a server.">
+  <link rel="canonical" href="https://projects.cepcar.top/vscode-exact-file-preview/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VS Code Exact File Preview">
+  <meta property="og:description" content="Preview the exact selected file in VS Code without starting a server or guessing your framework.">
+  <meta property="og:url" content="https://projects.cepcar.top/vscode-exact-file-preview/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VS Code Exact File Preview">
+  <meta name="twitter:description" content="Preview the exact selected file in VS Code without starting a server or guessing your framework.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VS Code Exact File Preview",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "description": "VS Code extension that previews .html, .svg, .md, .json, .xml, and .txt files exactly as they are, sandboxed, without starting a server.",
+    "softwareVersion": "0.1.0-beta",
+    "url": "https://projects.cepcar.top/vscode-exact-file-preview/",
+    "downloadUrl": "https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --header-bg: #0f172a;
+      --accent: #0ea5e9;
+      --accent-hover: #0284c7;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --tag-bg: #f1f5f9;
+      --tag-text: #475569;
+      --green: #166534;
+      --green-bg: #dcfce7;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .site-nav {
+      background: var(--header-bg);
+      padding: 0.85rem 1.5rem;
+    }
+    .site-nav a {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+    .site-nav a:hover { color: #fff; text-decoration: none; }
+
+    .hero {
+      background: var(--header-bg);
+      color: #f1f5f9;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .hero p {
+      margin-top: 0.75rem;
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.6em 1.2em;
+      border-radius: 0.45rem;
+      text-decoration: none;
+      transition: background 0.1s, color 0.1s;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.18); color: #fff; text-decoration: none; }
+    .btn-outline { background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { background: #e2e8f0; color: var(--text); text-decoration: none; }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    .section { margin-bottom: 2.5rem; }
+    .section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .install-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+    .install-steps { margin-top: 1rem; }
+    .install-step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.6rem 0;
+    }
+    .install-step + .install-step { border-top: 1px solid var(--border); }
+    .step-num {
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+    .step-text { font-size: 0.9rem; }
+    .step-text code {
+      background: var(--tag-bg);
+      padding: 0.1em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 0.85em;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .feature-list li {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+    .type-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+    .type-ext {
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .type-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .limits-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .limits-list li {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .limits-list li::before {
+      content: '·';
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .commands-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .commands-list li { font-size: 0.9rem; padding-left: 1rem; position: relative; }
+    .commands-list li::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+    .footer-row + .footer-row { margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">&#8592; All projects</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">Beta &mdash; v0.1.0</div>
+    <h1>VS Code Exact File Preview</h1>
+    <p>Preview the exact selected file in VS Code without starting a server or guessing your framework.</p>
+    <div class="hero-actions">
+      <a href="https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix"
+         class="btn btn-primary">&#8595; Download .vsix (0.1.0-beta)</a>
+      <a href="https://github.com/toris-tree/vscode-exact-file-preview"
+         class="btn btn-secondary">View on GitHub &#8594;</a>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="section">
+      <h2>Install</h2>
+      <div class="install-box">
+        <p style="font-size:0.9rem;color:var(--muted)">Not yet on the Marketplace &mdash; install manually via .vsix until then.</p>
+        <div class="install-steps">
+          <div class="install-step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <a href="https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix">Download the .vsix file</a>
+            </div>
+          </div>
+          <div class="install-step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              In VS Code: open Extensions (<code>Ctrl+Shift+X</code> / <code>Cmd+Shift+X</code>), click the <code>&#8943;</code> menu &rarr; <strong>Install from VSIX&hellip;</strong>
+            </div>
+          </div>
+          <div class="install-step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              Right-click any supported file in the Explorer and choose <strong>Exact File Preview: Open Preview</strong>, or open it from the Command Palette.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What it does</h2>
+      <ul class="feature-list">
+        <li>Opens a sandboxed webview panel beside the active editor showing the file exactly as-is</li>
+        <li>HTML and SVG previewed with scripts blocked &mdash; no code execution, no network requests</li>
+        <li>Markdown rendered safely: headings, bold, italic, lists, code blocks; <code>javascript:</code> links stripped</li>
+        <li>JSON pretty-printed and HTML-escaped; invalid JSON falls back to escaped raw text with a note</li>
+        <li>XML and plain text shown as escaped readable code</li>
+        <li>Files over 2 MB are refused with a clear message &mdash; no content embedded</li>
+        <li>No server, no network calls, no code execution, no file mutation, no telemetry</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Supported file types</h2>
+      <div class="types-grid">
+        <div class="type-card">
+          <div class="type-ext">.html</div>
+          <div class="type-desc">Sandboxed iframe &mdash; scripts blocked</div>
+        </div>
+        <div class="type-card">
+          <div class="type-ext">.svg</div>
+          <div class="type-desc">Rendered as image &mdash; scripts inert</div>
+        </div>
+        <div class="type-card">
+          <div class="type-ext">.md</div>
+          <div class="type-desc">Basic safe Markdown render</div>
+        </div>
+        <div class="type-card">
+          <div class="type-ext">.json</div>
+          <div class="type-desc">Pretty-printed and escaped</div>
+        </div>
+        <div class="type-card">
+          <div class="type-ext">.xml</div>
+          <div class="type-desc">Escaped readable code</div>
+        </div>
+        <div class="type-card">
+          <div class="type-ext">.txt</div>
+          <div class="type-desc">Escaped plain text</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Commands</h2>
+      <p style="font-size:0.9rem;margin-bottom:0.75rem">One command, four entry points:</p>
+      <ul class="commands-list">
+        <li>Command Palette: <strong>Exact File Preview: Open Preview</strong></li>
+        <li>Explorer context menu (right-click a supported file)</li>
+        <li>Editor context menu (right-click in an open supported file)</li>
+        <li>Editor title bar icon (when a supported file is active)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Requirements</h2>
+      <ul class="feature-list">
+        <li>VS Code 1.75 or later</li>
+        <li>No npm install or build step &mdash; works out of the box</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Known limits</h2>
+      <ul class="limits-list">
+        <li>HTML files that load external CDN resources (Bootstrap, Tailwind, Google Fonts) will look bare &mdash; this is intentional; the preview is static and sandboxed</li>
+        <li>Markdown renderer is basic: no tables, footnotes, or embedded HTML</li>
+        <li>SVG features that require script or external resources are silently inert</li>
+        <li>Not yet on the VS Code Marketplace &mdash; manual .vsix install required</li>
+        <li>No live reload on file save</li>
+      </ul>
+    </section>
+
+    <div style="margin-top:1rem">
+      <a href="https://github.com/toris-tree/vscode-exact-file-preview/releases/tag/v0.1.0-beta"
+         class="btn btn-outline">Release notes on GitHub &#8594;</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="footer-row">
+      <a href="/">&#8592; All projects</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/toris-tree/vscode-exact-file-preview">GitHub</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://projects.cepcar.top/">projects.cepcar.top</a>
+    </p>
+    <p class="footer-row">Provided as-is with no warranty. &copy; 2026 Tori Projects</p>
+  </footer>
+</body>
+</html>
