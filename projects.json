@@ -21,12 +21,22 @@
       ],
       "github": "https://github.com/toris-tree/vscode-exact-file-preview",
       "project_page": "https://projects.cepcar.top/vscode-exact-file-preview/",
+      "marketplace": "https://marketplace.visualstudio.com/items?itemName=toris-tree.vscode-exact-file-preview",
+      "open_vsx": "https://open-vsx.org/extension/toris-tree/vscode-exact-file-preview",
       "download": {
         "label": "Install from VS Code Marketplace",
         "url": "https://marketplace.visualstudio.com/items?itemName=toris-tree.vscode-exact-file-preview"
       },
+      "download_open_vsx": {
+        "label": "Install from Open VSX",
+        "url": "https://open-vsx.org/extension/toris-tree/vscode-exact-file-preview"
+      },
+      "download_vsix": {
+        "label": "Download .vsix (0.1.0)",
+        "url": "https://github.com/toris-tree/vscode-exact-file-preview/releases/download/v0.1.0-beta/vscode-exact-file-preview-0.1.0.vsix"
+      },
       "release_page": "https://github.com/toris-tree/vscode-exact-file-preview/releases/tag/v0.1.0-beta",
-      "version": "0.1.0-beta",
+      "version": "0.1.0",
       "released": "2026-06-22",
       "ctas": [
         {
@@ -59,8 +69,7 @@
           "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=contributor&title=Contributor%20interest%3A%20VS%20Code%20Exact%20File%20Preview&body=I%27d%20like%20to%20contribute%20to%20VS%20Code%20Exact%20File%20Preview.%0A%0A%2A%2AWhat%20I%20have%20in%20mind%3A%2A%2A%0A",
           "intent": "contributor"
         }
-      ],
-      "marketplace": "https://marketplace.visualstudio.com/items?itemName=toris-tree.vscode-exact-file-preview"
+      ]
     },
     {
       "slug": "github-timeline-focus",
