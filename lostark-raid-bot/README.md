@@ -2,13 +2,13 @@
 
 Lostark Raid Bot is a Discord bot for Lost Ark roster setup, raid eligibility, weekly raid tracking, and quick raid-status checks inside Discord.
 
-The main public website is:
+## Quick Links
 
-https://lostark.cepcar.top
-
-The visual first-time setup guide is:
-
-https://lostark.cepcar.top/setup-guide.html
+- Website: https://lostark.cepcar.top
+- Setup guide: https://lostark.cepcar.top/setup-guide.html
+- Install bot: [Add Lostark Raid Bot to Discord](https://discord.com/oauth2/authorize?client_id=1476709196325191810&scope=bot%20applications.commands&permissions=277025508352)
+- Support server: https://discord.gg/7zppGQzF8C
+- Optional Ko-fi: [Support Lostark Raid Bot on Ko-fi](https://ko-fi.com/lostarkraidbot)
 
 ## Install
 
@@ -34,9 +34,11 @@ The bot uses Discord slash commands and does not require Administrator permissio
 
 Lostark Raid Bot is free during public preview. Preview limits, features, and availability may change as the bot is tested and improved.
 
-Optional: support Lostark Raid Bot development:
+## ☕ Support The Project
 
-https://ko-fi.com/lostarkraidbot
+Lostark Raid Bot is free during preview. If it saves you time, optional support helps cover hosting, testing, maintenance, and future features.
+
+[Support Lostark Raid Bot on Ko-fi](https://ko-fi.com/lostarkraidbot)
 
 Support is optional. Donations do not unlock beta access, support, or features.
 
