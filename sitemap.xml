@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://projects.cepcar.top/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://projects.cepcar.top/vscode-exact-file-preview/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://projects.cepcar.top/github-timeline-focus/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://projects.cepcar.top/attachment-rename-safe/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://projects.cepcar.top/lostark-raid-bot/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

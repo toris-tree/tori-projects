@@ -4,9 +4,18 @@
   <subtitle>Open tools and betas</subtitle>
   <link href="https://projects.cepcar.top/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://projects.cepcar.top/" rel="alternate" type="text/html"/>
-  <updated>2026-06-22T00:00:00Z</updated>
+  <updated>2026-06-29T00:00:00Z</updated>
   <id>https://projects.cepcar.top/</id>
   <author><name>Tori Projects</name></author>
+
+  <entry>
+    <title>What should VS Code Exact File Preview support next?</title>
+    <link href="https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html"/>
+    <id>https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html</id>
+    <updated>2026-06-29T00:00:00Z</updated>
+    <summary>A short feedback ask for VS Code and VSCodium users: what file type or workflow should Exact File Preview support next?</summary>
+    <category term="vs-code-extension"/>
+  </entry>
 
   <entry>
     <title>VS Code Exact File Preview — v0.1.0-beta</title>
