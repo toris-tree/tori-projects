@@ -22,6 +22,7 @@
       "github": "https://github.com/toris-tree/vscode-exact-file-preview",
       "project_page": "https://projects.cepcar.top/vscode-exact-file-preview/",
       "feedback_post": "https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html",
+      "service_offer": "https://projects.cepcar.top/services/vscode-workflow-automation/",
       "marketplace": "https://marketplace.visualstudio.com/items?itemName=toris-tree.vscode-exact-file-preview",
       "open_vsx": "https://open-vsx.org/extension/toris-tree/vscode-exact-file-preview",
       "download": {
@@ -40,6 +41,12 @@
       "version": "0.1.0",
       "released": "2026-06-22",
       "ctas": [
+        {
+          "type": "service_offer",
+          "label": "Need a VS Code workflow automated for your team?",
+          "url": "https://github.com/toris-tree/vscode-exact-file-preview/issues/new?labels=commercial%2Cservice-offer%2Cvscode-workflow-automation&title=VS%20Code%20workflow%20automation%20request&body=Workflow%20to%20automate%3A%0A%0AWho%20uses%20it%20/%20team%20size%3A%0A%0AFiles%2C%20commands%2C%20or%20systems%20involved%3A%0A%0AWhat%20should%20happen%20inside%20VS%20Code%3A%0A%0ADeadline%20or%20maintenance/support%20needs%3A%0A",
+          "intent": "buyer"
+        },
         {
           "type": "marketplace_install",
           "label": "Install from VS Code Marketplace",

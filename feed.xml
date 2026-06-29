@@ -9,6 +9,15 @@
   <author><name>Tori Projects</name></author>
 
   <entry>
+    <title>Custom VS Code extensions and developer workflow automation</title>
+    <link href="https://projects.cepcar.top/services/vscode-workflow-automation/"/>
+    <id>https://projects.cepcar.top/services/vscode-workflow-automation/</id>
+    <updated>2026-06-29T00:00:00Z</updated>
+    <summary>A paid-service offer for teams that need custom VS Code extensions, workflow automation, or maintenance/support.</summary>
+    <category term="service"/>
+  </entry>
+
+  <entry>
     <title>What should VS Code Exact File Preview support next?</title>
     <link href="https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html"/>
     <id>https://projects.cepcar.top/vscode-exact-file-preview/feedback-next.html</id>
